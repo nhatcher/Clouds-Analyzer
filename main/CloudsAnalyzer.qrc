@@ -1,0 +1,18 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>images/icon.png</file>
+	<file>images/inicio.jpg</file>
+	<file>images/kochIcon.png</file>
+	<file>images/fbm1dIcon.png</file>	
+	<file>images/openIcon.png</file>
+	<file>images/saveIcon.png</file>
+	<file>images/generateIcon.png</file>
+	<file>images/calculateIcon.png</file>
+	<file>images/calculateHurstIcon.png</file>
+	<file>images/helpIcon.png</file> 
+	<file>images/calculateAreaPerimeterIcon.png</file>
+	<file>images/correlation.png</file>
+	<file>images/renyi.png</file>
+	<file>images/HenonFormula.png</file>
+</qresource>
+</RCC>
