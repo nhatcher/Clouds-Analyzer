@@ -5,10 +5,34 @@
     <title>Clouds Analyzer documentation.  Chapter 2: Fractals</title>
     <link type="text/css" href="style.css" rel="stylesheet" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
   </head>
   <body>
     <h1 class=section-title>Calculating fractal dimensions</h1>
-    <h2 class=sub-section-title>Fractals</h2>
-    Fractals are objects that have a Hausdorf dimension strictly greater than the topological dimension.
+    <h2 class=sub-section-title>What is a fractal?</h2>
+    Fractals are objects that have a "dimension" strictly greater than the topological dimension. This is only one definition of a fractal, but it is usualy a very convenient definition. Of course it leave us clueless if we do not know what the dimension of an object is supposed to be.
+    It turns out that it is somewhat difficult to give a mathematical definition of the simple concept of dimension. But basically one can give a number called  <em><a href="http://en.wikipedia.org/wiki/Topological_dimension">topological dimension</a></em> to each set of points of $\mathbb R^n$. And it behaves as it should for all standard figures. A line has topological dimension 1, a circle 2, a cube 3, and so on. One can give a numbre to every set. But is this number the dimension?
+         
+   <div>There are more things Horatius in heaven an earth than are dream of by your philosophy.</div>
+
+   There are many others definions of what a dimension should be. One of the most famous one is called the <em><a href="http://en.wikipedia.org/wiki/Hausdorff_dimension">Hausdorff–Besicovitch dimension</a></em>. It is extremely intuitive. Lets be formal.
+   <div>Definition</div>
+
+   Let $M \in \mathbb R^n$ a subset. Now take any real number $d\in [0,n]$ and cover the set $M$ by balls, so that $M\in\sum_{i\in I}B_i$. Imagine that the radius of the ball $B_i$ is $r_i$. Now consider the number
+   \begin{equation}
+   C^d(M) = \textrm{inf}\left\{\sum_{i\in I} r_i^d\right\}
+   \end{equation}
+   The Hausdorff dimension is defined by
+   \begin{gather}
+   \textrm{dim}_H(M) = \textrm{inf}\{d\geq 0 : C^d(M) = 0\}
+   \end{gather}
+
+   <div>Some words of explanation</div>
+   
   </body>
 </html> 
