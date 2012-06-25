@@ -87,7 +87,7 @@ void Viewer3D::initializeGL()
 	GLfloat lightDiffuse[] = {1, 1, 1, 1};    
 	GLfloat lightAmbient[] = {0.2f, 0.2f, 0.2f, 0.2f};
 	GLfloat lightSpecular[] = {0.2f, 0.2f, 0.2f, 0.2f}; 
-	GLfloat lightPosition[]= {MAXX/2, -2, 30, 1.0f};
+	GLfloat lightPosition[] = {((GLfloat)MAXX)/2.0f, -2, 30, 1.0f};
 
     //Ambient light component
 	glLightfv(GL_LIGHT0, GL_AMBIENT, lightAmbient);
