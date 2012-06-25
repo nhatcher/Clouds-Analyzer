@@ -2,7 +2,6 @@
 #include <QtOpenGL>
 
 #include <cmath>
-#include <iostream>
 
 #include "viewer3D.h"
 
