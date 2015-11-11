@@ -1,8 +1,11 @@
 #include "Fractal2D.h"
 #include "fractalviewer.h"
 #include <QtGui>
+#include <unistd.h>
+
 
 int variable=5;
+
 
 int main(int argc, char **argv)
 {
