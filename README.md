@@ -9,12 +9,13 @@ Build intructions
 
 In any linux system, just
 
-`make`
+* `qmake`
+* `make`
 
 Dependencies:
 
 * Qt4
-* FFTW3
+* FFTW3 (sudo apt-get install libfftw3-dev on my linux box)
 
 CREDITS
 =======
