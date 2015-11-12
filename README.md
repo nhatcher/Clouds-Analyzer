@@ -10,10 +10,32 @@ It started up as a tool to test if certain physical processes are happening in t
 
 But you can use it for simpler stuff too, I think.
 
+What can I do
+=============
+
+1) Create some very basic fractals
+  * koch curve
+  * Hennon attractor
+  * Fractional browmian motion in 1 Dim
+  * Molecular clouds.
+
+2) Measure fractal dimensions of these fractals:
+  * Box counting dimension
+  * Correlation dimension
+  * Rengy dimensions
+  * Area-perimeter dimension.
+
+3) Load some images (2D) and make some analysis on those images:
+  * Convert the color image to a grey scale image
+  * Make it black and white with a particular threshold
+  * Detect borders
+  * Measure fractal dimensions of this image
+
+
 Build instructions
 =================
 
-In any linux system, just
+In any Linux system, just change to the source directory and
 
 * `qmake`
 * `make`
@@ -36,4 +58,4 @@ The same cloud, computing the box-counting dimension of the "border" of the clou
 CREDITS
 =======
 
-It was made in 2008 by my student Sandra Ocando and by me.
+This program started as part of the thesis of Sandra Ocando and is now maintained by N. Hatcher. If there is something hat interest you here please contact me.

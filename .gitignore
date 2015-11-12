@@ -1,3 +1,8 @@
 *.o
 *~
-*.swp 
+*.swp
+wisdom3.txt
+moc_*
+source/CloudsAnalyzer
+source/Makefile
+source/qrc_CloudsAnalyzer.cpp
