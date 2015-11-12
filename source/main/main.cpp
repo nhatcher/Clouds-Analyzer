@@ -3,10 +3,6 @@
 #include <QtGui>
 #include <unistd.h>
 
-
-int variable=5;
-
-
 int main(int argc, char **argv)
 {
 	QApplication app(argc, argv);
@@ -16,7 +12,7 @@ int main(int argc, char **argv)
 
 	splash.show();
 	app.processEvents();
-	
+
 	FractalViewer fractalViewer;
 	//fractalViewer.showMaximized();
 	fractalViewer.show();
