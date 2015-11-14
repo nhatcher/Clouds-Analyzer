@@ -2,7 +2,8 @@ Introduction
 ============
 
 Do you have a picture and want to know if it is a [fractal](https://en.wikipedia.org/wiki/Fractal_dimension)?
-We might be able to help you!.
+
+We might be able to help you!
 
 Clouds Analyzer is a graphical computer program that simulates clouds and tries to measure different properties of these clouds.
 
