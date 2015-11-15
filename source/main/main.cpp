@@ -3,10 +3,10 @@
 
 int main(int argc, char **argv)
 {
-	QApplication app(argc, argv);
+  QApplication app(argc, argv);
 
-	FractalViewer fractalViewer;
-	fractalViewer.show();
+  FractalViewer fractalViewer;
+  fractalViewer.show();
 
   return app.exec();
 }

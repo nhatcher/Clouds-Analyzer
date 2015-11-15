@@ -41,6 +41,8 @@ In any Linux system, just change to the source directory and
 * `qmake`
 * `make`
 
+The binary executable is called `CloudsAnalyzer`
+
 Dependencies:
 
 I use the wonderful QT for all the UI and FFTW3 for the Fast Fourier Transforms

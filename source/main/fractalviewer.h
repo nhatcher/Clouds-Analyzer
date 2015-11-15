@@ -17,67 +17,67 @@ class HelpBrowser;
 
 class FractalViewer : public QMainWindow
 {
-	Q_OBJECT
+  Q_OBJECT
 
-	public:
-		FractalViewer();
+  public:
+    FractalViewer();
 
   private slots:
-		void open();
-		void save();
-		void about();
-		void help();
-		void setPosition(int ,int);
-    //	void calculateOptions();
-	  //	void seCurrentIndex(int);
+    void open();
+    void save();
+    void about();
+    void help();
+    void setPosition(int ,int);
+    //  void calculateOptions();
+    //  void seCurrentIndex(int);
 
 
 
   private:
-		void createActions();
-		void createMenus();
-		void createToolBars();
-		void updateActions();
+    void createActions();
+    void createMenus();
+    void createToolBars();
+    void updateActions();
 
-		Fractal2D *myfractal;
+    Fractal2D *myfractal;
 
-		QAction *openAct;
-		QAction *saveAct;
-		QAction *generateAct;
-		QAction *calculateAct;
-		QAction *calculateCorrAct;
-		QAction *calculateRenyiAct;
+    QAction *openAct;
+    QAction *saveAct;
+    QAction *generateAct;
+    QAction *calculateAct;
+    QAction *calculateCorrAct;
+    QAction *calculateRenyiAct;
 
-		QAction *calculateAreaPerimeterAct;
-		QAction *exitAct;
-		QAction *calculateOptionAct;
-		QAction *calculateCorrOptionAct;
-		QAction *calculateRenyiOptionAct;
-		QAction *calculateAreaPerimeterOptionsAct;
-		QAction *aboutAct;
-		QAction *helpAct;
+    QAction *calculateAreaPerimeterAct;
+    QAction *exitAct;
+    QAction *calculateOptionAct;
+    QAction *calculateCorrOptionAct;
+    QAction *calculateRenyiOptionAct;
+    QAction *calculateAreaPerimeterOptionsAct;
+    QAction *aboutAct;
+    QAction *helpAct;
 
-		QMenu *fileMenu;
-		QMenu *toolsMenu;
-		QMenu *optionsMenu;
-		QMenu *helpMenu;
+    QMenu *fileMenu;
+    QMenu *toolsMenu;
+    QMenu *optionsMenu;
+    QMenu *helpMenu;
 
-		QToolBar *fileToolBar;
+    QToolBar *fileToolBar;
 
 
-		QComboBox *fractalCombo;
+    QComboBox *fractalCombo;
 };
 
 class HelpBrowser : public QWidget
 {
-	Q_OBJECT
-	public:
-		HelpBrowser(const QString &path, const QString &page, QWidget *parent=0);
-		static void showPage(const QString &page);
-	private slots:
-	private:
-		QTextBrowser *textBrowser;
-		QPushButton *homeButton;
-		QPushButton *closeButton;
+  Q_OBJECT
+  public:
+    HelpBrowser(const QString &path, const QString &page, QWidget *parent=0);
+    static void showPage(const QString &page);
+  private slots:
+  private:
+    QTextBrowser *textBrowser;
+    QPushButton *homeButton;
+    QPushButton *closeButton;
 };
 #endif
