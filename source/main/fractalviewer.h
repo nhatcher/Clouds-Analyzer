@@ -4,41 +4,41 @@
 #include <QMainWindow>
 #include <QWidget>
 
- class QAction;
- class QLabel;
- class QMenu;
- class QScrollArea;
- class QScrollBar;
- class Fractal2D;
- class QComboBox;
- class QTextBrowser;
- class QPushButton;
- class HelpBrowser;
+class QAction;
+class QLabel;
+class QMenu;
+class QScrollArea;
+class QScrollBar;
+class Fractal2D;
+class QComboBox;
+class QTextBrowser;
+class QPushButton;
+class HelpBrowser;
 
- class FractalViewer : public QMainWindow
+class FractalViewer : public QMainWindow
 {
 	Q_OBJECT
 
 	public:
 		FractalViewer();
 
-	private slots:
+  private slots:
 		void open();
 		void save();
 		void about();
 		void help();
 		void setPosition(int ,int);
-//		void calculateOptions();
-	//	void seCurrentIndex(int);
-		
+    //	void calculateOptions();
+	  //	void seCurrentIndex(int);
 
 
-	private:
+
+  private:
 		void createActions();
 		void createMenus();
 		void createToolBars();
 		void updateActions();
-		
+
 		Fractal2D *myfractal;
 
 		QAction *openAct;
@@ -47,21 +47,21 @@
 		QAction *calculateAct;
 		QAction *calculateCorrAct;
 		QAction *calculateRenyiAct;
-		
+
 		QAction *calculateAreaPerimeterAct;
 		QAction *exitAct;
 		QAction *calculateOptionAct;
 		QAction *calculateCorrOptionAct;
 		QAction *calculateRenyiOptionAct;
-		QAction *calculateAreaPerimeterOptionsAct; 
+		QAction *calculateAreaPerimeterOptionsAct;
 		QAction *aboutAct;
-		QAction *helpAct;   
+		QAction *helpAct;
 
 		QMenu *fileMenu;
 		QMenu *toolsMenu;
 		QMenu *optionsMenu;
 		QMenu *helpMenu;
-		
+
 		QToolBar *fileToolBar;
 
 
@@ -81,6 +81,3 @@ class HelpBrowser : public QWidget
 		QPushButton *closeButton;
 };
 #endif
- 
-
- 
