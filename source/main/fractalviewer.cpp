@@ -5,8 +5,7 @@
 
 class HelpBrowser;
 
-FractalViewer::FractalViewer()
-{
+FractalViewer::FractalViewer() {
   myfractal= new Fractal2D;
   setCentralWidget(myfractal);
   createActions();
@@ -20,16 +19,16 @@ FractalViewer::FractalViewer()
   fractalCombo->addItem("Henon");
   //fractalCombo->addItem("Image");
   //fractalCombo->addItem("None");
-  fractalCombo->setItemIcon(0,QIcon(":/images/kochIcon.png"));
-  fractalCombo->setItemIcon(1,QIcon(":/images/fbm1dIcon.png"));
-  fractalCombo->setItemIcon(2,QIcon(":/images/icon.png"));
-  fractalCombo->setItemIcon(3,QIcon(":/images/icon.png"));
+  fractalCombo->setItemIcon(0, QIcon(":/images/kochIcon.png"));
+  fractalCombo->setItemIcon(1, QIcon(":/images/fbm1dIcon.png"));
+  fractalCombo->setItemIcon(2, QIcon(":/images/icon.png"));
+  fractalCombo->setItemIcon(3, QIcon(":/images/icon.png"));
   fractalCombo->setCurrentIndex(2);
-  connect(fractalCombo, SIGNAL(activated(int)),myfractal,SLOT(setCurrentIndex(int)));
+  connect(fractalCombo, SIGNAL(activated(int)), myfractal, SLOT(setCurrentIndex(int)));
   connect(myfractal, SIGNAL(positionChanged(int , int )), this, SLOT(setPosition(int , int )));
   createToolBars();
 
-  setToolButtonStyle ( Qt::ToolButtonTextUnderIcon );
+  setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
   setWindowTitle(tr("Clouds Analyzer"));
   resize(500, 400);
