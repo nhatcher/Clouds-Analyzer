@@ -13,7 +13,6 @@ class Fractal2D;
 class QComboBox;
 class QTextBrowser;
 class QPushButton;
-class HelpBrowser;
 
 class FractalViewer : public QMainWindow
 {
@@ -30,8 +29,6 @@ class FractalViewer : public QMainWindow
     void setPosition(int ,int);
     //  void calculateOptions();
     //  void seCurrentIndex(int);
-
-
 
   private:
     void createActions();
@@ -68,16 +65,4 @@ class FractalViewer : public QMainWindow
     QComboBox *fractalCombo;
 };
 
-class HelpBrowser : public QWidget
-{
-  Q_OBJECT
-  public:
-    HelpBrowser(const QString &path, const QString &page, QWidget *parent=0);
-    static void showPage(const QString &page);
-  private slots:
-  private:
-    QTextBrowser *textBrowser;
-    QPushButton *homeButton;
-    QPushButton *closeButton;
-};
 #endif

@@ -6,7 +6,7 @@
 class HelpBrowser;
 
 FractalViewer::FractalViewer() {
-  myfractal= new Fractal2D;
+  myfractal = new Fractal2D;
   setCentralWidget(myfractal);
   createActions();
   createMenus();
@@ -43,7 +43,7 @@ void FractalViewer::setPosition(int i, int j) {
 }
 
 void FractalViewer::help() {
-  HelpBrowser::showPage("help.html");
+  QMessageBox::information(this, tr("Fractal Analyzer"), tr("You will find a ww link shortly"));
 }
 
 void FractalViewer::open(){
@@ -62,7 +62,7 @@ void FractalViewer::open(){
 
 void FractalViewer::save() {
     QImage image;
-    image=myfractal->getImage();
+    image = myfractal->getImage();
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), QDir::currentPath(),  tr("Images (*.png, *.xpm, *.jpg)"));
     image.save(fileName);
 }
@@ -169,7 +169,7 @@ void FractalViewer::createMenus() {
   toolsMenu->addSeparator();
 
   helpMenu = new QMenu(tr("&Help"), this);
-  //helpMenu->addAction(helpAct);
+  helpMenu->addAction(helpAct);
   helpMenu->addAction(aboutAct);
 
 
@@ -198,34 +198,3 @@ void FractalViewer::createToolBars() {
 }
 
 void FractalViewer::updateActions() { }
-
-HelpBrowser::HelpBrowser(const QString &path, const QString &page,QWidget *parent): QWidget(parent) {
-  setAttribute(Qt::WA_DeleteOnClose);
-  setAttribute(Qt::WA_GroupLeader);
-  textBrowser = new QTextBrowser;
-  homeButton = new QPushButton(tr("&Home"));
-  closeButton = new QPushButton(tr("Close"));
-  closeButton->setShortcut(tr("Esc"));
-  QHBoxLayout *buttonLayout = new QHBoxLayout;
-  buttonLayout->addWidget(homeButton);
-  buttonLayout->addStretch();
-  buttonLayout->addWidget(closeButton);
-  QVBoxLayout *mainLayout = new QVBoxLayout;
-  mainLayout->addLayout(buttonLayout);
-  mainLayout->addWidget(textBrowser);
-  setLayout(mainLayout);
-  setWindowTitle("Clouds Analyzer's Help");
-  connect(homeButton,SIGNAL(clicked()),textBrowser, SLOT(home()));
-  connect(closeButton,SIGNAL(clicked()),this, SLOT(close()));
-  setWindowIcon(QIcon(":/images/helpIcon.png"));
-  textBrowser->setSearchPaths(QStringList() << path );
-  textBrowser->setSource(page);
-
-}
-
-void HelpBrowser::showPage(const QString &page) {
-  QString path = QApplication::applicationDirPath() + "/doc";
-  HelpBrowser *browser = new HelpBrowser(path,page);
-  browser->resize(700,600);
-  browser->show();
-}
