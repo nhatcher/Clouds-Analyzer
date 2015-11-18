@@ -43,7 +43,7 @@ void FractalViewer::setPosition(int i, int j) {
 }
 
 void FractalViewer::help() {
-  QMessageBox::information(this, tr("Fractal Analyzer"), tr("You will find a ww link shortly"));
+  QMessageBox::information(this, tr("Fractal Analyzer"), tr("http://nhatcher.github.io/Clouds-Analyzer/"));
 }
 
 void FractalViewer::open(){
