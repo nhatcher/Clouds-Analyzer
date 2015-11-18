@@ -74,6 +74,11 @@ Soooo many things.
 6. Documentation
 7. ...
 
+DOCUMENTATION
+=============
+
+[Github pages](http://nhatcher.github.io/Clouds-Analyzer/)
+
 CREDITS
 =======
 
