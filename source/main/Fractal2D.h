@@ -70,18 +70,23 @@ class Fractal2D : public QWidget
   DrawWidget *drawFilamentIndexKhalil;
   Viewer3D *window3D;
     public slots:
-  void generate(void);
+  // void generate();
+  void generateKoch(void);
+  void generateFbm1d(void);
+  void generateHenon(void);
+  void generateClouds(void);
+  void generateClouds3D(void);
   void contour(void);
   void grayScale(void);
   void setThreshold( int T){Threshold=T;};
-  void setCurrentIndex(int index);
+  // void setCurrentIndex(int index);
   void Repaint();
   void calculate(void);
   void calculateCorr(void);
-    void calculateRenyi(void);
+  void calculateRenyi(void);
   void calculateOptions(void);
   void calculateCorrOptions(void);
-    void calculateRenyiOptions(void);
+  void calculateRenyiOptions(void);
   void calculateAreaPerimeterOptions(void);
   void calculateAreaPerimeter(void);
 
@@ -114,7 +119,7 @@ class Fractal2D : public QWidget
   QScrollArea *scrollAreaFractal;
   CalculateAreaPerimeterOptions *calculateoptionsap;
   QStackedLayout *OptionsLayout;
-  int currentIndex;
+  // int currentIndex;
   int Threshold;
   QPushButton *showContourButton;
   QVBoxLayout *rightLayout;

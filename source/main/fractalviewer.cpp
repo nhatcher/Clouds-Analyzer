@@ -10,21 +10,7 @@ FractalViewer::FractalViewer() {
   setCentralWidget(myfractal);
   createActions();
   createMenus();
-  fractalCombo = new QComboBox();
 
-  fractalCombo->addItem("Koch");
-  fractalCombo->addItem("Fbm1d");
-  fractalCombo->addItem("Clouds");
-  fractalCombo->addItem("Clouds3D");
-  fractalCombo->addItem("Henon");
-  //fractalCombo->addItem("Image");
-  //fractalCombo->addItem("None");
-  fractalCombo->setItemIcon(0, QIcon(":/images/kochIcon.png"));
-  fractalCombo->setItemIcon(1, QIcon(":/images/fbm1dIcon.png"));
-  fractalCombo->setItemIcon(2, QIcon(":/images/icon.png"));
-  fractalCombo->setItemIcon(3, QIcon(":/images/icon.png"));
-  fractalCombo->setCurrentIndex(2);
-  connect(fractalCombo, SIGNAL(activated(int)), myfractal, SLOT(setCurrentIndex(int)));
   connect(myfractal, SIGNAL(positionChanged(int , int )), this, SLOT(setPosition(int , int )));
   createToolBars();
 
@@ -69,7 +55,8 @@ void FractalViewer::save() {
 
 void FractalViewer::about() {
   QMessageBox::about(this, tr("About Fractal Analyzer"),
-             tr("A program designed to analyze the fractal structure of the interstelar medium. Developed by: Sandra Ocando & Nicolas Hatcher. 2008." ));
+             tr("A program designed to analyze the fractal structure of the interstelar medium."
+                "\nDeveloped by: Sandra Ocando & Nicolas Hatcher. 2008." ));
 }
 
 void FractalViewer::createActions() {
@@ -85,10 +72,25 @@ void FractalViewer::createActions() {
   //saveAct->setEnabled(false);
   connect(saveAct, SIGNAL(triggered()), this, SLOT(save()));
 
-  generateAct = new QAction(tr("&Generate..."), this);
-  generateAct->setShortcut(tr("Ctrl+G"));
-  generateAct->setIcon(QIcon(":/images/generateIcon.png"));
-  connect(generateAct, SIGNAL(triggered()), myfractal, SLOT(generate()));
+  kochAct = new QAction(tr("Koch curve"), this);
+  kochAct->setIcon(QIcon(":/images/kochIcon.png"));
+  connect(kochAct, SIGNAL(triggered()), myfractal, SLOT(generateKoch()));
+
+  henonAct = new QAction(tr("Hénon attractor"), this);
+  henonAct->setIcon(QIcon(":/images/kochIcon.png"));
+  connect(henonAct, SIGNAL(triggered()), myfractal, SLOT(generateHenon()));
+
+  fbmAct = new QAction(tr("Fractional Brownian motion"), this);
+  fbmAct->setIcon(QIcon(":/images/fbm1dIcon.png"));
+  connect(fbmAct, SIGNAL(triggered()), myfractal, SLOT(generateFbm1d()));
+
+  cloudsAct = new QAction(tr("Clouds"), this);
+  cloudsAct->setIcon(QIcon(":/images/icon.png"));
+  connect(cloudsAct, SIGNAL(triggered()), myfractal, SLOT(generateClouds()));
+
+  clouds3DAct = new QAction(tr("3D Clouds"), this);
+  clouds3DAct->setIcon(QIcon(":/images/icon.png"));
+  connect(clouds3DAct, SIGNAL(triggered()), myfractal, SLOT(generateClouds3D()));
 
   calculateAct = new QAction(tr("Calculate &Box-Counting Dimension.."), this);
   calculateAct->setShortcut(tr("Ctrl+B"));
@@ -96,11 +98,11 @@ void FractalViewer::createActions() {
   calculateAct->setIconText(tr("Box-Counting"));
   connect(calculateAct, SIGNAL(triggered()), myfractal, SLOT(calculate()));
 
-   calculateCorrAct = new QAction(tr("Calculate &Correlation Dimension.."), this);
-   calculateCorrAct->setShortcut(tr("Ctrl+C"));
-   calculateCorrAct->setIcon(QIcon(":/images/correlation.png"));
-   calculateCorrAct->setIconText(tr("Correlation"));
-   connect(calculateCorrAct, SIGNAL(triggered()), myfractal, SLOT(calculateCorr()));
+  calculateCorrAct = new QAction(tr("Calculate &Correlation Dimension.."), this);
+  calculateCorrAct->setShortcut(tr("Ctrl+C"));
+  calculateCorrAct->setIcon(QIcon(":/images/correlation.png"));
+  calculateCorrAct->setIconText(tr("Correlation"));
+  connect(calculateCorrAct, SIGNAL(triggered()), myfractal, SLOT(calculateCorr()));
 
   calculateRenyiAct = new QAction(tr("Calculate &Renyi Dimension.."), this);
   calculateRenyiAct->setShortcut(tr("Ctrl+R"));
@@ -153,8 +155,15 @@ void FractalViewer::createMenus() {
   fileMenu->addSeparator();
   fileMenu->addAction(exitAct);
 
+  fractalMenu = new QMenu(tr("Fractal"), this);
+  fractalMenu->addAction(kochAct);
+  fractalMenu->addAction(henonAct);
+  fractalMenu->addAction(fbmAct);
+  fractalMenu->addAction(cloudsAct);
+  fractalMenu->addAction(clouds3DAct);
+  fractalMenu->addSeparator();
+
   toolsMenu = new QMenu(tr("&Tools"), this);
-  toolsMenu->addAction(generateAct);
   toolsMenu->addAction(calculateAreaPerimeterAct);
   toolsMenu->addAction(calculateAct);
   toolsMenu->addAction(calculateCorrAct);
@@ -172,29 +181,14 @@ void FractalViewer::createMenus() {
   helpMenu->addAction(helpAct);
   helpMenu->addAction(aboutAct);
 
-
   menuBar()->addMenu(fileMenu);
+  menuBar()->addMenu(fractalMenu);
   menuBar()->addMenu(toolsMenu);
   menuBar()->addMenu(optionsMenu);
   menuBar()->addMenu(helpMenu);
 }
 
 
-void FractalViewer::createToolBars() {
-  fileToolBar = addToolBar(tr("&File"));
-  fileToolBar->addAction(openAct);
-  fileToolBar->addAction(saveAct);
-
-  fileToolBar->addWidget(fractalCombo);
-  fileToolBar->addAction(generateAct);
-  fileToolBar->addAction(calculateAct);
-
-  fileToolBar->addAction(calculateAreaPerimeterAct);
-  fileToolBar->addAction(calculateCorrAct);
-  fileToolBar->addAction(calculateRenyiAct);
-
-  QSize iconSize(40,40);
-  fileToolBar->setIconSize(iconSize);
-}
+void FractalViewer::createToolBars() {}
 
 void FractalViewer::updateActions() { }

@@ -40,7 +40,13 @@ class FractalViewer : public QMainWindow
 
     QAction *openAct;
     QAction *saveAct;
-    QAction *generateAct;
+
+    QAction *kochAct;
+    QAction *henonAct;
+    QAction *fbmAct;
+    QAction *cloudsAct;
+    QAction *clouds3DAct;
+
     QAction *calculateAct;
     QAction *calculateCorrAct;
     QAction *calculateRenyiAct;
@@ -54,15 +60,11 @@ class FractalViewer : public QMainWindow
     QAction *aboutAct;
     QAction *helpAct;
 
+    QMenu *fractalMenu;
     QMenu *fileMenu;
     QMenu *toolsMenu;
     QMenu *optionsMenu;
     QMenu *helpMenu;
-
-    QToolBar *fileToolBar;
-
-
-    QComboBox *fractalCombo;
 };
 
 #endif

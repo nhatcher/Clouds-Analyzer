@@ -47,8 +47,6 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     OptionsLayout->addWidget(CloudsWidget);
     OptionsLayout->addWidget(Clouds3DWidget);
     OptionsLayout->addWidget(HenonWidget);
-    OptionsLayout->setCurrentIndex(2);
-    currentIndex = 2;
 
     QLabel *ThresholdLabel = new QLabel("Threshold = ");
     QSpinBox *ThresholdBox = new QSpinBox;
@@ -212,11 +210,6 @@ void Fractal2D::mouseReleaseEvent( QMouseEvent *Mevent)
     }
    // QWidget::mouseReleaseEvent(Mevent);
 }
-void Fractal2D::setCurrentIndex(int index)
-{
-    currentIndex=index;
-    OptionsLayout->setCurrentIndex(index);
-};
 
 void Fractal2D::mountainView()
 {
@@ -305,65 +298,89 @@ void Fractal2D::contour()
 
 }
 
-void Fractal2D::generate()
-{
+/*void Fractal2D::generate(Widget) {
+  Widget->Update();
+  Widget->setimage();
+  ImageArray1d.clear();
+  ImageArray2d.clear();
+  ImageArray3d.clear();
+  setImageArray(Widget->getimage());
+  putImage(Widget->getimage());
+  fractalimage->setPixmap(QPixmap::fromImage(fimage));
+  fractalimage->adjustSize();
+}*/
 
-    switch(currentIndex){
-        case 0:
-            KochWidget->Update();
-            KochWidget->setimage();
-      ImageArray1d.clear(); ImageArray2d.clear(); ImageArray3d.clear();
-            setImageArray(KochWidget->getimage());
-            putImage(KochWidget->getimage());
-            break;
-        case 1:
-            Fbm1dWidget->Update();
-            Fbm1dWidget->setimage();
-      ImageArray1d.clear(); ImageArray2d.clear(); ImageArray3d.clear();
-            setImageArray(Fbm1dWidget->getimage());
-            putImage(Fbm1dWidget->getimage());
-            break;
-        case 2:
-            CloudsWidget->Update();
-            CloudsWidget->setimage();
-      ImageArray1d.clear(); ImageArray2d.clear(); ImageArray3d.clear();
-            setImageArray(CloudsWidget->getimage());
-            putImage(CloudsWidget->getimage());
-            break;
-        case 3:
-            Clouds3DWidget->Update();
-            Clouds3DWidget->setimage();
-      ImageArray1d.clear(); ImageArray2d.clear(); ImageArray3d.clear();
-            setImageArray(Clouds3DWidget->getimage());
-            putImage(10,Clouds3DWidget->getimage());
-            break;
-        case 4:
-            //       HenonWidget->Update();
-            HenonWidget->generate();
-      ImageArray1d.clear(); ImageArray2d.clear(); ImageArray3d.clear();
-            setImageArray(HenonWidget->getimage());
-            putImage(HenonWidget->getimage());
-            break;
-        default:
-            break;
-    }
 
-    fractalimage->setPixmap(QPixmap::fromImage(fimage));
-    fractalimage->adjustSize();
+void Fractal2D::generateKoch() {
+  // generate(Widget);
+  KochWidget->Update();
+  KochWidget->setimage();
+  ImageArray1d.clear();
+  ImageArray2d.clear();
+  ImageArray3d.clear();
+  setImageArray(KochWidget->getimage());
+  putImage(KochWidget->getimage());
+  fractalimage->setPixmap(QPixmap::fromImage(fimage));
+  fractalimage->adjustSize();
+}
 
+void Fractal2D::generateFbm1d() {
+  Fbm1dWidget->Update();
+  Fbm1dWidget->setimage();
+  ImageArray1d.clear();
+  ImageArray2d.clear();
+  ImageArray3d.clear();
+  setImageArray(Fbm1dWidget->getimage());
+  putImage(Fbm1dWidget->getimage());
+  fractalimage->setPixmap(QPixmap::fromImage(fimage));
+  fractalimage->adjustSize();
+}
+
+
+void Fractal2D::generateClouds() {
+  CloudsWidget->Update();
+  CloudsWidget->setimage();
+  ImageArray1d.clear();
+  ImageArray2d.clear();
+  ImageArray3d.clear();
+  setImageArray(CloudsWidget->getimage());
+  putImage(CloudsWidget->getimage());
+  fractalimage->setPixmap(QPixmap::fromImage(fimage));
+  fractalimage->adjustSize();
+}
+
+void Fractal2D::generateClouds3D() {
+  Clouds3DWidget->Update();
+  Clouds3DWidget->setimage();
+  ImageArray1d.clear();
+  ImageArray2d.clear();
+  ImageArray3d.clear();
+  setImageArray(Clouds3DWidget->getimage());
+  putImage(10,Clouds3DWidget->getimage());
+  fractalimage->setPixmap(QPixmap::fromImage(fimage));
+  fractalimage->adjustSize();
+}
+
+void Fractal2D::generateHenon() {
+  // HenonWidget->Update();
+  HenonWidget->generate();
+  ImageArray1d.clear();
+  ImageArray2d.clear();
+  ImageArray3d.clear();
+  setImageArray(HenonWidget->getimage());
+  putImage(HenonWidget->getimage());
+  fractalimage->setPixmap(QPixmap::fromImage(fimage));
+  fractalimage->adjustSize();
 }
 
 void Fractal2D::Projection()
 {
-
-
   if(!ImageArray3d.empty()) {
   Clouds3DWidget->project();
   setImageArray(Clouds3DWidget->getprojection());
   putImage(Clouds3DWidget->getprojection());
   fractalimage->setPixmap(QPixmap::fromImage(fimage));
   fractalimage->adjustSize(); }
-
 }
 
 void Fractal2D::calculate()
