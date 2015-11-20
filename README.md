@@ -45,7 +45,7 @@ The binary executable is called `CloudsAnalyzer`
 
 Dependencies:
 
-I use the wonderful QT for all the UI and FFTW3 for the Fast Fourier Transforms
+I use the wonderful Qt4 for all the UI and FFTW3 for the Fast Fourier Transforms
 
 * Qt4
 * FFTW3 (`sudo apt-get install libfftw3-dev` on my Linux box)
