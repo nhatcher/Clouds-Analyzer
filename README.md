@@ -5,9 +5,13 @@ Do you have a picture and want to know if it is a [fractal](https://en.wikipedia
 
 We might be able to help you!
 
-Clouds Analyzer is a graphical computer program that simulates clouds and tries to measure different properties of these clouds.
+Clouds Analyzer is a computer program that specializes in computing fractal dimensions of images in diferent ways.
 
-It started up as a tool to test if certain physical processes are happening in the [interstellar medium](https://en.wikipedia.org/wiki/Interstellar_medium), the sites of start creation. It is thus linked to big words such as [turbulence](https://en.wikipedia.org/wiki/Turbulence)...
+You can also generate some very elementary fractlas (some of which have a well known fractal dimension) as a test ground for your images.
+
+It started up as a tool to test if [turbulence](https://en.wikipedia.org/wiki/Turbulence) occurs in molecular clouds in the [interstellar medium](https://en.wikipedia.org/wiki/Interstellar_medium), the sites of start creation.
+
+It has also some very elementary tools to manipulate images.
 
 But you can use it for simpler stuff too, I think.
 
