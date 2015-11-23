@@ -118,7 +118,7 @@ class Fractal2D : public QWidget
   CalculateAreaPerimeterWidget *CalculateAreaPerimeter;
   QScrollArea *scrollAreaFractal;
   CalculateAreaPerimeterOptions *calculateoptionsap;
-  QStackedLayout *OptionsLayout;
+  // QStackedLayout *OptionsLayout;
   // int currentIndex;
   int Threshold;
   QPushButton *showContourButton;

@@ -41,13 +41,6 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     CalculateAreaPerimeter = new CalculateAreaPerimeterWidget;
     MetricTechnique = new MetricSpaceTechnique;
 
-    // OptionsLayout = new QStackedLayout;
-    // OptionsLayout->addWidget(KochWidget);
-    // OptionsLayout->addWidget(Fbm1dWidget);
-    // OptionsLayout->addWidget(CloudsWidget);
-    // OptionsLayout->addWidget(Clouds3DWidget);
-    // OptionsLayout->addWidget(HenonWidget);
-
     QLabel *ThresholdLabel = new QLabel("Threshold = ");
     QSpinBox *ThresholdBox = new QSpinBox;
     QSlider *ThresholdSlider = new QSlider(Qt::Horizontal);
@@ -84,11 +77,8 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     QLabel *GenerationLabel = new QLabel(tr("<center><font color = DarkBlue> FRACTAL GENERATION SETTINGS"));
     QLabel *EditionLabel = new QLabel(tr("<center><font color = DarkBlue> IMAGE EDITION OPTIONS"));
 
-    QSplitter *splitter = new QSplitter;
-    splitter->addWidget(scrollAreaFractal);
-
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addWidget(splitter);
+    mainLayout->addWidget(scrollAreaFractal);
     setLayout(mainLayout);
 }
 
@@ -281,18 +271,6 @@ void Fractal2D::contour()
         QMessageBox::warning(this, tr("Warning"), tr("Please load an image"));}
 
 }
-
-/*void Fractal2D::generate(Widget) {
-  Widget->Update();
-  Widget->setimage();
-  ImageArray1d.clear();
-  ImageArray2d.clear();
-  ImageArray3d.clear();
-  setImageArray(Widget->getimage());
-  putImage(Widget->getimage());
-  fractalimage->setPixmap(QPixmap::fromImage(fimage));
-  fractalimage->adjustSize();
-}*/
 
 
 void Fractal2D::generateKoch() {
