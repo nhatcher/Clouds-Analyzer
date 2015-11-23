@@ -48,11 +48,11 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     ThresholdLayout->addWidget(ThresholdLabel);
     ThresholdLayout->addWidget(ThresholdBox);
     ThresholdLayout->addWidget(ThresholdSlider);
-    ThresholdBox->setRange(-1,255);
-    ThresholdBox->setValue(-1);
-    ThresholdSlider->setRange(-1,255);
-    ThresholdSlider->setValue(-1);
     Threshold = -1;
+    ThresholdBox->setRange(-1, 255);
+    ThresholdBox->setValue(Threshold);
+    ThresholdSlider->setRange(-1, 255);
+    ThresholdSlider->setValue(Threshold);
 
     fractalimage = new QLabel;
     fractalimage->setMouseTracking (true);
