@@ -28,7 +28,7 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     QPushButton *projectionButton = new QPushButton(tr("Projection 3D->2D"));
 
     //showContourButton->setEnabled(false);
-    setMouseTracking (true);
+    setMouseTracking(true);
 
     KochWidget = new KochPage;
     Fbm1dWidget = new Fbm1dPage;
@@ -41,12 +41,12 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     CalculateAreaPerimeter = new CalculateAreaPerimeterWidget;
     MetricTechnique = new MetricSpaceTechnique;
 
-    OptionsLayout = new QStackedLayout;
-    OptionsLayout->addWidget(KochWidget);
-    OptionsLayout->addWidget(Fbm1dWidget);
-    OptionsLayout->addWidget(CloudsWidget);
-    OptionsLayout->addWidget(Clouds3DWidget);
-    OptionsLayout->addWidget(HenonWidget);
+    // OptionsLayout = new QStackedLayout;
+    // OptionsLayout->addWidget(KochWidget);
+    // OptionsLayout->addWidget(Fbm1dWidget);
+    // OptionsLayout->addWidget(CloudsWidget);
+    // OptionsLayout->addWidget(Clouds3DWidget);
+    // OptionsLayout->addWidget(HenonWidget);
 
     QLabel *ThresholdLabel = new QLabel("Threshold = ");
     QSpinBox *ThresholdBox = new QSpinBox;
@@ -56,10 +56,10 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     ThresholdLayout->addWidget(ThresholdBox);
     ThresholdLayout->addWidget(ThresholdSlider);
     ThresholdBox->setRange(-1,255);
-    ThresholdBox->setValue(-1); Threshold=-1;
+    ThresholdBox->setValue(-1);
     ThresholdSlider->setRange(-1,255);
     ThresholdSlider->setValue(-1);
-    Threshold=-1;
+    Threshold = -1;
 
     fractalimage = new QLabel;
     fractalimage->setMouseTracking (true);
@@ -82,26 +82,9 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
 
     QLabel *GenerationLabel = new QLabel(tr("<center><font color = DarkBlue> FRACTAL GENERATION SETTINGS"));
     QLabel *EditionLabel = new QLabel(tr("<center><font color = DarkBlue> IMAGE EDITION OPTIONS"));
-    rightLayout = new QVBoxLayout;
-    rightLayout->addSpacing(10);
-    rightLayout->addWidget(GenerationLabel);
-    rightLayout->addLayout(OptionsLayout);
-    rightLayout->addWidget(EditionLabel);
-    rightLayout->addLayout(ThresholdLayout);
-    rightLayout->addWidget(showContourButton);
-    rightLayout->addWidget(grayScaleButton);
-    rightLayout->addWidget(mountainButton);
-    rightLayout->addWidget(projectionButton);
-    rightLayout->addSpacing(10);
-    rightLayout->addWidget(MetricTechnique);
 
-    QWidget *rightWidget = new QWidget;
-    rightWidget->setLayout(rightLayout);
     QSplitter *splitter = new QSplitter;
     splitter->addWidget(scrollAreaFractal);
-    splitter->addWidget(rightWidget);
-    rightWidget->setMinimumWidth(300);
-    rightWidget->setMaximumWidth(350);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(splitter);
@@ -110,7 +93,7 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
 
 void Fractal2D::mouseMoveEvent( QMouseEvent *Mevent)
 {
-    unsigned int i,j;
+    unsigned int i, j;
     QRgb value;
     QImage modfimage(fimage);
     value = qRgb(120,100,40);
