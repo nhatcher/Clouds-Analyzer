@@ -113,7 +113,7 @@ class Fractal2D : public QWidget
   Fbm1dPage *Fbm1dWidget;
   BoxCountingCalculator *Calculate;
   CorrelationCalculator *CalculateCorr;
-    RenyiCalculator *CalculateRenyi;
+  RenyiCalculator *CalculateRenyi;
 
   CalculateAreaPerimeterWidget *CalculateAreaPerimeter;
   QScrollArea *scrollAreaFractal;
@@ -122,7 +122,7 @@ class Fractal2D : public QWidget
   // int currentIndex;
   int Threshold;
   QPushButton *showContourButton;
-  QVBoxLayout *rightLayout;
+  // QVBoxLayout *rightLayout;
 
   uint minPosX, minPosY, maxPosX, maxPosY;
 
