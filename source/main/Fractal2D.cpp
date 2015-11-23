@@ -48,7 +48,7 @@ Fractal2D::Fractal2D(QWidget *parent) : QWidget(parent)
     ThresholdLayout->addWidget(ThresholdLabel);
     ThresholdLayout->addWidget(ThresholdBox);
     ThresholdLayout->addWidget(ThresholdSlider);
-
+    
     Threshold = -1;
     ThresholdBox->setRange(-1, 255);
     ThresholdBox->setValue(Threshold);
