@@ -1,14 +1,25 @@
+var PI = Math.PI;
+
+function update(el, iSides, iDepth) {
+  var dSideLenght = 200;
+  var ctx = el.getContext('2d');
+  var iWidth = 500, iHeight = 500;
+  el.setAttribute('width', ''+iWidth);
+  el.setAttribute('height', ''+iHeight);
+  snowflake(ctx, iDepth, dSideLenght, iSides, iWidth, iHeight);
+  ctx.stroke();
+}
+
+
 
 function snowflake(c, iDepth, dRad, n, iWidth, iHeight) {
-  var PI = Math.PI;
   var dSide = 2*dRad*Math.cos((n-2)*PI/(2*n));
   var dAngle = (1-(n-2)/n)*PI;
   function leg(iLoop) {
     c.save();
     if (iLoop == 0) {
       c.lineTo(dSide, 0);
-    }
-    else {
+    } else {
       c.scale(1/3,1/3);
       leg(iLoop-1);
       c.rotate(PI/3);
@@ -21,6 +32,7 @@ function snowflake(c, iDepth, dRad, n, iWidth, iHeight) {
     c.restore();
     c.translate(dSide, 0);
   }
+
   c.save();
   c.translate(iWidth/2-dSide/2, iHeight/2+dRad*Math.sin((n-2)*PI/(2*n)));
   c.moveTo(0,0);

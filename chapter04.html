@@ -8,27 +8,22 @@
     <script type="text/javascript" src="koch.js"></script>
     <script>
      $(document).ready(function () {
-       $('input').change( function() {update();});
-       update();
+       var el = document.getElementById('snowflake');
+       $('input').change( function() {
+         var iSides = parseInt($('#sides').val(), 10);
+         var iDepth = parseInt($('#depth').val(), 10)
+         update(el, iSides, iDepth);
+       });
+       update(el, 3, 3);
      });
-     function update() {
-       var ctx = document.getElementById('snowflake').getContext('2d');
-       var iSides = parseInt($('#sides').val(),10);
-       var dSideLenght = 200;
-       var iWidth = 500, iHeight = 500;
-       document.getElementById('snowflake').setAttribute('width', ''+iWidth); 
-       document.getElementById('snowflake').setAttribute('height', ''+iHeight);
-       snowflake(ctx, parseInt($('#depth').val(),10), dSideLenght, iSides, iWidth, iHeight);
-       ctx.stroke();
-     }
     </script>
   </head>
   <body>
     <div id=nav-bar style="position: fixed; left: 10px; top: 10px;"><a href="index.html">Home </a> ๛ Generating fractals</div>
     <h1 class=section-title>Generating fractals</h1>
     <h2> Koch curve and related fractals </h2>
-    Depth: </input><input type="range" min="0" max="10" value=3 id="depth" step="1" />
-    Sides: </input><input type="range" min="3" max="50" value=3 id="sides" step="1" />
+    Depth: </input><input type="range" min="0" max="6" value=3 id="depth" step="1" />
+    Sides: </input><input type="range" min="3" max="10" value=3 id="sides" step="1" />
     <canvas id="snowflake" width="300" height="300"></canvas>
     <h2> Brownian motion and fractal landscapes </h2>
     <h2> Strange attractors</h2>
@@ -37,4 +32,4 @@
       <li><a href="http://www.cns.gatech.edu/~predrag/papers/gunaratne.pdf">Topological and metric properties of Hénon-type strange attractors</a></li>
     </ul>
   </body>
-</html> 
+</html>
