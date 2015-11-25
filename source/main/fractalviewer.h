@@ -64,6 +64,7 @@ class FractalViewer : public QMainWindow
     QMenu *fileMenu;
     QMenu *toolsMenu;
     QMenu *optionsMenu;
+    QMenu *imageMenu;
     QMenu *helpMenu;
 };
 

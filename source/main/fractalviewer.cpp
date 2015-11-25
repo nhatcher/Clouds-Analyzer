@@ -177,6 +177,8 @@ void FractalViewer::createMenus() {
   optionsMenu->addAction(calculateRenyiOptionAct);
   toolsMenu->addSeparator();
 
+  imageMenu = new QMenu(tr("&Image"), this);
+
   helpMenu = new QMenu(tr("&Help"), this);
   helpMenu->addAction(helpAct);
   helpMenu->addAction(aboutAct);
@@ -185,6 +187,7 @@ void FractalViewer::createMenus() {
   menuBar()->addMenu(fractalMenu);
   menuBar()->addMenu(toolsMenu);
   menuBar()->addMenu(optionsMenu);
+  menuBar()->addMenu(imageMenu);
   menuBar()->addMenu(helpMenu);
 }
 
