@@ -9,7 +9,7 @@ Clouds Analyzer is a computer program that specializes in computing fractal dime
 
 You can also generate some very elementary fractlas (some of which have a well known fractal dimension) as a test ground for your images.
 
-It started up as a tool to test if [turbulence](https://en.wikipedia.org/wiki/Turbulence) occurs in molecular clouds in the [interstellar medium](https://en.wikipedia.org/wiki/Interstellar_medium), the sites of start creation.
+It started up as a tool to test if [turbulence](https://en.wikipedia.org/wiki/Turbulence) occurs in molecular clouds in the [interstellar medium](https://en.wikipedia.org/wiki/Interstellar_medium), the sites of star creation.
 
 It has also some very elementary tools to manipulate images.
 
